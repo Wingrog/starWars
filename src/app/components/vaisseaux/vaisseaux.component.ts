@@ -9,7 +9,6 @@ import { Vaisseau } from '../../models/vaisseau';
 })
 export class VaisseauxComponent implements OnInit {
   vaisseaux: Vaisseau[];
-  date = new Date(); // ajout d'une variable pour afficher la date
   constructor(private vaisseauService: VaisseauService) { }
 
   ngOnInit(): void {
