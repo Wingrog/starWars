@@ -18,8 +18,7 @@
       <td>{{ planet.allegiance }}</td>
       <td>{{ planet.nbKmTerre }}</td>
       <td><a class="btn btn-warning" [routerLink]="['/planets', planet.id]">En savoir plus</a></td>
-      <td><a class="btn btn-primary" [routerLink]="['/planets/update', planet.id]">Editer la planete</a></td>
-
+      <td><a class="btn btn-primary" [routerLink]="['/planets/update', planet.id]">Editer</a></td>
       <td> <a class="btn btn-danger" (click)="deletePlanet(planet)">Supprimer</a></td>
     </tr>
   </tbody>
