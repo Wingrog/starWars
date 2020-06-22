@@ -18,4 +18,8 @@ export class PlanetService {
     return this.planets.filter(planet => planet.id === id)[0];
 
   }
+
+  addPlanet(planet: Planet): void {
+    this.planets.push(planet)
+  }
 }
