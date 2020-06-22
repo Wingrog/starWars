@@ -15,7 +15,7 @@ export class PlanetService {
   }
 
   getOnePlanetById(id: number): Planet {
-    return this.planets.filter(planet => planet.id === id)[0]; //retour une seule planete selon l'id
+    return this.planets.filter(planet => planet.id === id)[0]; //retour une seule planete selon l'ID
 
   }
 

@@ -14,4 +14,4 @@ export class Planet {
     this.nbKmTerre = nbKmTerre;
     this.image = image;
   }
-}
+};
