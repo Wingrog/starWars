@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'vaisseaux', component: VaisseauxComponent },
   { path: 'vaisseaux/add', component: AddVaisseauComponent },
-  { path: 'vaisseau/:id', component: VaisseauxDetailComponent },
+  { path: 'vaisseaux/:id', component: VaisseauxDetailComponent },
   { path: 'planets', component: PlanetsComponent },
   { path: 'planets/add', component: AddPlanetComponent },
   { path: 'planets/:id', component: PlanetDetailComponent },
