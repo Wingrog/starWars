@@ -22,4 +22,14 @@ export class VaisseauService {
   addVaisseau(vaisseau: Vaisseau): void {
     this.vehiculs.push(vaisseau); // on ajoute le vaisseau dans le tableau vehiculs
   }
+
+  deleteVaisseau(vehiculs: Vaisseau): Vaisseau[] {
+    this.vehiculs = this.vehiculs.filter(vaisseauToDelete => vehiculs !== vaisseauToDelete) //on supprime le vaisseau sélectionnée
+    return this.vehiculs;
+  }
+
+  editVaisseau(vaisseau: Vaisseau): Vaisseau[] {
+    this.vehiculs.filter(vaisseauUpdate => vaisseau === vaisseauUpdate)[0] = vaisseau; //on edite le vaisseau sélectionné
+    return this.vehiculs;
+  }
 }

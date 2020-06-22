@@ -19,8 +19,8 @@ export class AddPlanetComponent implements OnInit {
   }
 
   submitPlanet(): void {
-    console.log(this.planet);
-    this.planetService.addPlanet(this.planet); //on utilise la fonction qui se trouve dans le service
+    console.log(this.planet); //renvoi bien notre nouvelle planete
+    this.planetService.addPlanet(this.planet); //on utilise la fonction qui se trouve dans le service pour ajouter la planete
     this.router.navigate(['/planets']); // on redirige l'utilisateur sur la route planets
     this.toastr.success("La planète à bien été ajoutée !");
 

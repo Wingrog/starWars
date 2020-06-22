@@ -8,6 +8,8 @@ import { VaisseauxDetailComponent } from './components/vaisseaux-detail/vaisseau
 import { AddPlanetComponent } from './components/add-planet/add-planet.component';
 import { AddVaisseauComponent } from './components/add-vaisseau/add-vaisseau.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { EditPlanetComponent } from './components/edit-planet/edit-planet.component';
+import { EditVaisseauComponent } from './components/edit-vaisseau/edit-vaisseau.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,6 +20,9 @@ const routes: Routes = [
   { path: 'planets', component: PlanetsComponent },
   { path: 'planets/add', component: AddPlanetComponent },
   { path: 'planets/:id', component: PlanetDetailComponent },
+  { path: 'planets/update/:id', component: EditPlanetComponent },
+  { path: 'vaisseaux/update/:id', component: EditVaisseauComponent },
+
   { path: '**', component: PageNotFoundComponent }
 ];
 

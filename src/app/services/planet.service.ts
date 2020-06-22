@@ -11,15 +11,25 @@ export class PlanetService {
   ];
   constructor() { }
   getAllPlanets(): Planet[] {
-    return this.planets;
+    return this.planets; //retourne toutes nos planètes
   }
 
   getOnePlanetById(id: number): Planet {
-    return this.planets.filter(planet => planet.id === id)[0];
+    return this.planets.filter(planet => planet.id === id)[0]; //retour une seule planete selon l'id
 
   }
 
   addPlanet(planet: Planet): void {
-    this.planets.push(planet) // on va push dans le tableau
+    this.planets.push(planet) // on va push dans le tableau une planete
+  }
+
+  deletePlanet(planet: Planet): Planet[] {
+    this.planets = this.planets.filter(planeteToDelete => planet !== planeteToDelete) //Actualise le tableau planet sans la planete rentrée en argument
+    return this.planets;
+  }
+
+  editPlanet(planet: Planet): Planet[] {
+    this.planets.filter(planetUpdate => planet === planetUpdate)[0] = planet; //on edite la planète selectionnée
+    return this.planets;
   }
 }

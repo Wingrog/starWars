@@ -8,7 +8,7 @@
     <th>Nombre d'habitants</th>
     <th>Allegiance</th>
     <th>Nombre de km depuis la terre</th>
-    <th></th>
+    <th>Action</th>
   </thead>
   <tbody>
     <tr *ngFor="let planet of this.planets">
@@ -18,6 +18,9 @@
       <td>{{ planet.allegiance }}</td>
       <td>{{ planet.nbKmTerre }}</td>
       <td><a class="btn btn-warning" [routerLink]="['/planets', planet.id]">En savoir plus</a></td>
+      <td><a class="btn btn-primary" [routerLink]="['/planets/update', planet.id]">Editer la planete</a></td>
+
+      <td> <a class="btn btn-danger" (click)="deletePlanet(planet)">Supprimer</a></td>
     </tr>
   </tbody>
 </table>

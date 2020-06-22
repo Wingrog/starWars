@@ -19,8 +19,8 @@ export class AddVaisseauComponent implements OnInit {
   }
 
   submitVaisseau(): void {
-    console.log(this.vaisseau)
-    this.vaisseauService.addVaisseau(this.vaisseau); // on va lancer la fonction qui se trouve dans le service
+    console.log(this.vaisseau)  //renvoit bien notre nouveau vaisseau
+    this.vaisseauService.addVaisseau(this.vaisseau); // on va lancer la fonction qui se trouve dans le service pour ajouter le vaisseau
     this.router.navigate(['/vaisseaux']); // on redirige l'utilisateur sur la root
     this.toastr.success("Le vaisseau à bien été ajouté !"); // on affiche la notification
   }

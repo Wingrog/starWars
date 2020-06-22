@@ -15,6 +15,8 @@ import { AddVaisseauComponent } from './components/add-vaisseau/add-vaisseau.com
 import { FormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { InitialPipe } from './pipes/initial.pipe';
+import { EditPlanetComponent } from './components/edit-planet/edit-planet.component';
+import { EditVaisseauComponent } from './components/edit-vaisseau/edit-vaisseau.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { InitialPipe } from './pipes/initial.pipe';
     AddPlanetComponent,
     AddVaisseauComponent,
     PageNotFoundComponent,
-    InitialPipe
+    InitialPipe,
+    EditPlanetComponent,
+    EditVaisseauComponent
   ],
   imports: [
     BrowserModule,
