@@ -1,0 +1,23 @@
+<h1>Les vaisseaux</h1>
+<a class="btn btn-danger" routerLink="/vaisseaux/add">Ajouter un vaisseau</a>
+
+<table class="table table-dark">
+  <thead>
+    <th>Image</th>
+    <th>Nom</th>
+    <th>Modèle</th>
+    <th>Plus rapide que la lumière</th>
+    <th>Nombre de passagers</th>
+    <th></th>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let vaisseau of this.vaisseaux">
+      <td><img src="{{vaisseau.image}}"></td>
+      <td>{{ vaisseau.nom }}</td>
+      <td>{{ vaisseau.model }}</td>
+      <td>{{ vaisseau.lightSpeed?'Oui':'Non' }}</td>
+      <td>{{ vaisseau.nbPassenger }}</td>
+      <td><a class="btn btn-warning" [routerLink]="['/vaisseau', vaisseau.id]">En savoir plus</a></td>
+  </tbody>
+</table>

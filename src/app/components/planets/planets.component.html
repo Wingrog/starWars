@@ -1,0 +1,23 @@
+<h1>Les planètes</h1>
+<a class="btn btn-danger" routerLink="/planets/add">Ajouter une planete</a>
+
+<table class="table table-dark">
+  <thead>
+    <th>Image</th>
+    <th>Nom</th>
+    <th>Nombre d'habitants</th>
+    <th>Allegiance</th>
+    <th>Nombre de km depuis la terre</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let planet of this.planets">
+      <td><img src="{{planet.image}}"></td>
+      <td>{{ planet.nom }}</td>
+      <td>{{ planet.nbHabitant }}</td>
+      <td>{{ planet.allegiance }}</td>
+      <td>{{ planet.nbKmTerre }}</td>
+      <td><a class="btn btn-warning" [routerLink]="['/planets', planet.id]">En savoir plus</a></td>
+    </tr>
+  </tbody>
+</table>

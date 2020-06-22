@@ -1,0 +1,32 @@
+<h1>Ajouter une planète</h1>
+
+<form #planetForm="ngForm" (ngSubmit)="submitPlanet()">
+
+  <label for="id">Renseigner l'ID de la planète</label>
+  <input type="number" class="form-control" name="id" id="id" required [(ngModel)]="planet.id" #id="ngModel">
+  <div [hidden]="id.valid" class="alert alert-warning">
+    Veuillez saisir un ID
+  </div>
+
+  <label for="nom">Renseigner le nom de la planète</label>
+  <input type="text" class="form-control" name="nom" id="nom" required [(ngModel)]="planet.nom" #nom="ngModel">
+
+  <label for="id">Renseigner le nombre d'habitants</label>
+  <input type="number" class="form-control" name="nombre" id="nombre" required [(ngModel)]="planet.nbHabitant"
+    #nombre="ngModel">
+
+  <label for="id">Renseigner le nom de l'Allegiance</label>
+  <input type="text" class="form-control" name="allegiance" id="allegiance" required [(ngModel)]="planet.allegiance"
+    #allegiance="ngModel">
+
+  <label for="id">Renseigner le nombre de Km par rapport à la Terre</label>
+  <input type="number" class="form-control" name="nbKmTerre" id="nbKmTerre" required [(ngModel)]="planet.nbKmTerre"
+    #nbKmTerre="ngModel">
+
+  <label for="id">Renseigner une image</label>
+  <input type="string" class="form-control" name="image" id="image" required [(ngModel)]="planet.image"
+    #image="ngModel">
+
+  <input [disabled]="!planetForm.valid" type="submit" value="Envoyer">
+
+</form>
