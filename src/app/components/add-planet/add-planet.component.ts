@@ -20,8 +20,8 @@ export class AddPlanetComponent implements OnInit {
 
   submitPlanet(): void {
     console.log(this.planet);
-    this.planetService.addPlanet(this.planet);
-    this.router.navigate(['/planets']);
+    this.planetService.addPlanet(this.planet); //on utilise la fonction qui se trouve dans le service
+    this.router.navigate(['/planets']); // on redirige l'utilisateur sur la route planets
     this.toastr.success("La planète à bien été ajoutée !");
 
   }

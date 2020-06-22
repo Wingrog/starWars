@@ -20,6 +20,6 @@ export class PlanetService {
   }
 
   addPlanet(planet: Planet): void {
-    this.planets.push(planet)
+    this.planets.push(planet) // on va push dans le tableau
   }
 }

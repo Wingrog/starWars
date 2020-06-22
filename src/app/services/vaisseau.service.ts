@@ -20,6 +20,6 @@ export class VaisseauService {
   }
 
   addVaisseau(vaisseau: Vaisseau): void {
-    this.vehiculs.push(vaisseau);
+    this.vehiculs.push(vaisseau); // on ajoute le vaisseau dans le tableau vehiculs
   }
 }
