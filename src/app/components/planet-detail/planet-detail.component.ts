@@ -14,7 +14,7 @@ export class PlanetDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private PlanetService: PlanetService) { }
 
   ngOnInit(): void {
-    this.id = parseInt(this.route.snapshot.paramMap.get('id'));
-    this.planet = this.PlanetService.getOnePlanetById(this.id);
+    this.id = parseInt(this.route.snapshot.paramMap.get('id')); //pour récupérer l'ID de l'URL
+    this.planet = this.PlanetService.getOnePlanetById(this.id); // on recupere la planete en fonction de son ID
   }
 }

@@ -21,8 +21,8 @@ export class PlanetsComponent implements OnInit {
   }
 
   deletePlanet(planet: Planet) {
-    this.planets = this.planetService.deletePlanet(planet);
-    this.toastr.error("La planète " + planet.nom + " à été supprimée!");
+    this.planets = this.planetService.deletePlanet(planet); //on lance la fonction deletePlanet qui se trouve dans le PlanetService
+    this.toastr.error("La planète " + planet.nom + " à été supprimée!"); //on affiche la notification !
 
   }
 

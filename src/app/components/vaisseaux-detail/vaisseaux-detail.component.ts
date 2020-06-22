@@ -12,7 +12,7 @@ export class VaisseauxDetailComponent implements OnInit {
 
   id: number;
   vehiculs: Vaisseau;
-  constructor(private route: ActivatedRoute, private VaisseauService: VaisseauService) { }
+  constructor(private route: ActivatedRoute, private VaisseauService: VaisseauService) { } //on injecte ce que l'on va utiliser
 
   ngOnInit(): void {
     this.id = parseInt(this.route.snapshot.paramMap.get('id')); //recuperer l'id qui se trouve dans l'url

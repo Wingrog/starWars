@@ -16,8 +16,8 @@ export class EditPlanetComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private planetService: PlanetService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    const id = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
-    this.planet = this.planetService.getOnePlanetById(id);
+    const id = parseInt(this.activatedRoute.snapshot.paramMap.get('id')); //pour récupérer l'ID de l'URL
+    this.planet = this.planetService.getOnePlanetById(id); //on recupere le vaisseau en fonction de son ID
   }
 
   editPlanet(): void {

@@ -13,11 +13,11 @@ import { ToastrService } from 'ngx-toastr';
 export class EditVaisseauComponent implements OnInit {
   vaisseau: Vaisseau;
 
-  constructor(private vaisseauService: VaisseauService, private router: Router, private activatedRoute: ActivatedRoute, private toastr: ToastrService) { }
+  constructor(private vaisseauService: VaisseauService, private router: Router, private activatedRoute: ActivatedRoute, private toastr: ToastrService) { } //on injecte ce que l'on va utiliser
 
   ngOnInit(): void {
     const id = parseInt(this.activatedRoute.snapshot.paramMap.get('id')); //pour récupérer l'ID de l'URL
-    this.vaisseau = this.vaisseauService.getOneVehiculsById(id); // on recupere le vaisseau en fonction de son ID
+    this.vaisseau = this.vaisseauService.getOneVehiculsById(id); //on recupere le vaisseau en fonction de son ID
   }
 
 
