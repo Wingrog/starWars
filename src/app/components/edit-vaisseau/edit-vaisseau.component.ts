@@ -24,6 +24,6 @@ export class EditVaisseauComponent implements OnInit {
   editVaisseau(): void {
     this.vaisseauService.editVaisseau(this.vaisseau);
     this.router.navigate(['/vaisseaux']); //pour rediriger l'utilisateur
-    this.toastr.success("Le vaisseau à bien été modifiée !"); // on affiche la notification
+    this.toastr.success("Le vaisseau à bien été modifiée !"); // on affiche la notification !
   }
 }
