@@ -25,7 +25,7 @@ export class VaisseauService {
 
   deleteVaisseau(vehiculs: Vaisseau): Vaisseau[] {
     this.vehiculs = this.vehiculs.filter(vaisseauToDelete => vehiculs !== vaisseauToDelete) //on supprime le vaisseau sélectionnée
-    return this.vehiculs;
+    return this.vehiculs; //on retourne le tableau
   }
 
   editVaisseau(vaisseau: Vaisseau): Vaisseau[] {
