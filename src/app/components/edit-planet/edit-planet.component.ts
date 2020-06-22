@@ -22,7 +22,7 @@ export class EditPlanetComponent implements OnInit {
 
   editPlanet(): void {
     this.planetService.editPlanet(this.planet);
-    this.router.navigate(['/planets']);
+    this.router.navigate(['/home']);
     this.toastr.success("La planète à bien été modifiée !"); // on affiche la notification
 
 
