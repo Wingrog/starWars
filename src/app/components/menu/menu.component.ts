@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
   date = new Date(); // ajout d'une variable pour afficher la date
-
+  name = "Jonathan Lopez"
   constructor() { }
 
   ngOnInit(): void {
