@@ -16,8 +16,8 @@ export class EditVaisseauComponent implements OnInit {
   constructor(private vaisseauService: VaisseauService, private router: Router, private activatedRoute: ActivatedRoute, private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    const id = parseInt(this.activatedRoute.snapshot.paramMap.get('id')); //on recupere l'ID dans l'url
-    this.vaisseau = this.vaisseauService.getOneVehiculsById(id); // on recupere un vaisseau en fonction de son ID
+    const id = parseInt(this.activatedRoute.snapshot.paramMap.get('id')); //pour récupérer l'ID de l'URL
+    this.vaisseau = this.vaisseauService.getOneVehiculsById(id); // on recupere le vaisseau en fonction de son ID
   }
 
 
