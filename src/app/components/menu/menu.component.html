@@ -19,7 +19,11 @@
     </ul>
   </div>
 </nav>
-<!-- Ajout de la date au format désiré JOUR/MOIS/ANNEE ainsi que l'heure actuelle avec les secondes HH:MM:SS -->
 
+<!-- Ici nous avons l'utilisation de la Pipe date :
+Elle sert à formater une donnée dans la modifiée. Ici le Pipe date nous affichera une date user friendly (30/03/1993) par exemple
+Si on utilises des Pipes que l'on à crées, il ne fait pas oublier de vérifier qu'elle soit présentes dans le fichier app.module.ts
+Ici, il s'agit d'une Pipe native d'Angular, donc pas besoin d'import
+La Pipe date preds en paramètre le format que l'on souhaite afficher -->
 <h5>Bonjour {{name}} ({{name | initial }}) nous somme le : {{date | date: "dd/MM/yyyy"}} et il est actuellement
   {{date | date: "hh:mm:ss"}}</h5>
