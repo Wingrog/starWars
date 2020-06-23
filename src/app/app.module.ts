@@ -20,6 +20,11 @@ import { EditVaisseauComponent } from './components/edit-vaisseau/edit-vaisseau.
 import { CommonModule } from '@angular/common';
 
 
+// Angular est très complet, on ne va pas donc tout charger tout le code source pour une application, ça serait trop lourd.
+// Le fichier app.module va nous permettre de charger seulement les composants, services, pipes, modules, que l'on souhaite utiliser.
+// Tous composants et Pipes devront être inscris dans la section déclaration, sinon ils ne seront pas utilisables.
+// Toutes les librairies devront être ajoutées dans la section import pour être utilisées (Exemple :)
+
 @NgModule({
   declarations: [
     AppComponent,

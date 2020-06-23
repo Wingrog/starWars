@@ -1,2 +1,4 @@
-<app-menu></app-menu> <!-- On insert notre menu  -->
-<router-outlet></router-outlet> <!-- On insert toutes nos routes -->
+<app-menu></app-menu>
+<!-- Sert à appeler notre composant menu. Il est appelé ici afin d'être visible sur TOUTES les pages de notre application  -->
+<router-outlet></router-outlet>
+<!-- Sert à gérer la navigation. Il utilise le composant de routing d'angular afin d'afficher le contenu approprié en fonction de l'url saisie dans le navigateur. Exemple : /home, il affichera le HomeComponent. Permet d'acheminer l'utilisateur vers le bon composant. On retrouvera la correspondance entre URL et composant à afficher dans le fichier : app-routing.module.ts -->
