@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { VaisseauService } from 'src/app/services/vaisseau.service';
 import { Vaisseau } from 'src/app/models/vaisseau';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr'; // on importe ce service pour pouvoir utiliser la notification
 
 
 @Component({
@@ -23,7 +23,7 @@ export class EditVaisseauComponent implements OnInit {
 
   editVaisseau(): void {
     this.vaisseauService.editVaisseau(this.vaisseau);
-    this.router.navigate(['/home']); //pour rediriger l'utilisateur
+    this.router.navigate(['/home']); //pour rediriger l'utilisateur, dans ce cas, on le renvoit sur le home
     this.toastr.success("Le vaisseau à bien été modifiée !"); // on affiche la notification !
   }
 }

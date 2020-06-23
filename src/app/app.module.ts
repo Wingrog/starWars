@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ToastrModule } from 'ngx-toastr';
+import { ToastrModule } from 'ngx-toastr'; //pour utiliser les notifications
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,9 +12,9 @@ import { PlanetDetailComponent } from './components/planet-detail/planet-detail.
 import { VaisseauxDetailComponent } from './components/vaisseaux-detail/vaisseaux-detail.component';
 import { AddPlanetComponent } from './components/add-planet/add-planet.component';
 import { AddVaisseauComponent } from './components/add-vaisseau/add-vaisseau.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; //pour utiliser les formulaires
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { InitialPipe } from './pipes/initial.pipe';
+import { InitialPipe } from './pipes/initial.pipe'; //ajout de notre pipe personnalisée
 import { EditPlanetComponent } from './components/edit-planet/edit-planet.component';
 import { EditVaisseauComponent } from './components/edit-vaisseau/edit-vaisseau.component';
 
@@ -39,8 +39,8 @@ import { EditVaisseauComponent } from './components/edit-vaisseau/edit-vaisseau.
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule,
-    ToastrModule.forRoot(),
+    FormsModule, //pour utiliser les formulaires
+    ToastrModule.forRoot(), //pour utiliser les notifications
   ],
   providers: [],
   bootstrap: [AppComponent]
