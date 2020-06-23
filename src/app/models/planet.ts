@@ -1,10 +1,10 @@
 export class Planet {
-  public id: number;
-  public nom: string;
-  public nbHabitant: number;
-  public allegiance: string;
-  public nbKmTerre: number;
-  public image: string;
+  id: number;
+  nom: string;
+  nbHabitant: number;
+  allegiance: string;
+  nbKmTerre: number;
+  image: string;
 
   constructor($id: number = null, $nom: string = null, $nbHabitant: number = null, $allegiance: string = null, $nbKmTerre: number = null, $image: string = null) {
     this.id = $id;
@@ -14,4 +14,5 @@ export class Planet {
     this.nbKmTerre = $nbKmTerre;
     this.image = $image;
   }
+
 };
