@@ -43,8 +43,9 @@ export class PlanetService {
   }
 
   editPlanet(planet: Planet): Planet[] {
-    // On edite la planète selectionnée
-    this.planets.filter(planetUpdate => planet === planetUpdate)[0] = planet;
+    // On récupère la planète en fonction de son id puis la met à jour.
+    // Sauf que derrière on lui change sa valeure.
+    this.planets.filter(planetUpdate => planet.id === planetUpdate.id)[0] = planet;
     return this.planets;
   }
 }
