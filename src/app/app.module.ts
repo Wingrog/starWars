@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ToastrModule } from 'ngx-toastr'; //pour utiliser les notifications
+import { ToastrModule } from 'ngx-toastr'; //pour utiliser les notifications avec le ToastrModule
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,7 +23,7 @@ import { CommonModule } from '@angular/common';
 // Angular est très complet, on ne va pas donc tout charger tout le code source pour une application, ça serait trop lourd.
 // Le fichier app.module va nous permettre de charger seulement les composants, services, pipes, modules, que l'on souhaite utiliser.
 // Tous composants et Pipes devront être inscris dans la section déclaration, sinon ils ne seront pas utilisables.
-// Toutes les librairies devront être ajoutées dans la section import pour être utilisées (Exemple :)
+// Toutes les librairies devront être ajoutées dans la section import pour être utilisées (Exemple).
 
 @NgModule({
   declarations: [
