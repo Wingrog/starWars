@@ -10,12 +10,11 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AddVaisseauComponent implements OnInit {
 
-  vaisseau: Vaisseau;
+  vaisseau = new Vaisseau();
 
   constructor(private vaisseauService: VaisseauService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    this.vaisseau = new Vaisseau();
   }
 
   submitVaisseau(): void {

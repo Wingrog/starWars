@@ -28,7 +28,7 @@ export class AddPlanetComponent implements OnInit {
     this.planetService.addPlanet(this.planet);
     // On redirige l'utilisateur vers la liste des planètes qui devra avoir une élement en plus.
     this.router.navigate(['/planets']);
-    // On envoit une noticiation à l'utilisateur.
+    // On envoit une notification à l'utilisateur.
     this.toastr.success("La planète à bien été ajoutée !");
   }
 
