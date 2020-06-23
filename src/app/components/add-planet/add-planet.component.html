@@ -1,6 +1,11 @@
 <h1>Ajouter une planète</h1>
 
+<!-- Balise form avec une variable de validation de notre formulaire qui est créé et qui s'appelle planeteForm  #planetForm="ngForm" -->
+<!-- Cette variable va nous servir à cacher le bouton submit tant que le formulaire n'est pas valide [disabled]="!planetForm.valid"-->
+<!-- On a aussi la propritété submitPlanet() qui appelera la fonction submitPlanet de notre composant add-planet.component.ts -->
+
 <form #planetForm="ngForm" (ngSubmit)="submitPlanet()">
+
 
   <label for="id">Renseigner l'ID de la planète</label>
   <input type="number" class="form-control" name="id" id="id" required [(ngModel)]="planet.id" #id="ngModel">
@@ -8,6 +13,8 @@
     Veuillez saisir un ID
   </div>
 
+  <!-- On retrouve ici un input avec des règles de validation (required). Ces règles nous permettront de définir une variable qui servira à la validation de notre input (#nom="ngModel") -->
+  <!-- On utilisera cette validation afin de cacher ou afficher une div tant que le contenu n'est pas valide -->
   <label for="nom">Renseigner le nom de la planète</label>
   <input type="text" class="form-control" name="nom" id="nom" required [(ngModel)]="planet.nom" #nom="ngModel">
 
@@ -27,6 +34,7 @@
   <input type="string" class="form-control" name="image" id="image" required [(ngModel)]="planet.image"
     #image="ngModel">
 
+  <!-- Ce bouton enchenchera le ngSubmit de notre formulaire, dans notre cas il appelera la fonction submitPlanet() de notre composant add-planet.component.ts -->
   <input [disabled]="!planetForm.valid" type="submit" value="Envoyer">
 
 </form>
