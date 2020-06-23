@@ -17,6 +17,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { InitialPipe } from './pipes/initial.pipe'; //ajout de notre pipe personnalisée
 import { EditPlanetComponent } from './components/edit-planet/edit-planet.component';
 import { EditVaisseauComponent } from './components/edit-vaisseau/edit-vaisseau.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { EditVaisseauComponent } from './components/edit-vaisseau/edit-vaisseau.
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule, //pour utiliser les formulaires
