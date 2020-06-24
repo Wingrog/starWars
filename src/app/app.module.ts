@@ -18,6 +18,7 @@ import { InitialPipe } from './pipes/initial.pipe'; //ajout de notre pipe person
 import { EditPlanetComponent } from './components/edit-planet/edit-planet.component';
 import { EditVaisseauComponent } from './components/edit-vaisseau/edit-vaisseau.component';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 
 // Angular est très complet, on ne va pas donc tout charger tout le code source pour une application, ça serait trop lourd.
@@ -48,6 +49,7 @@ import { CommonModule } from '@angular/common';
     BrowserAnimationsModule,
     FormsModule, //pour utiliser les formulaires
     ToastrModule.forRoot(), //pour utiliser les notifications
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

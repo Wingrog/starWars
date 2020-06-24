@@ -21,8 +21,14 @@ export class PlanetsComponent implements OnInit {
 
   ngOnInit(): void {
     // Nous initialisons notre attribut planets (this.planets) en lui assignant le tableau de planètes contenu dans planet.service.ts.
-    this.planets = this.planetService.getAllPlanets();
-    this.loggerService.loaderService();
+    // this.planets = this.planetService.getAllPlanets();
+    // this.loggerService.loaderService();
+    console.log("Ici je demande mes données");
+    this.planetService.getAllPlanets().subscribe(data => {
+      this.planets = data;
+      console.log("C'est ok, je récupère les données !");
+
+    })
   }
 
   // Fonction appelé lors d'une action de clique (click) sur un lien contenu dans le fichier planets.component.html

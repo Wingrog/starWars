@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Planet } from '../models/planet';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/internal/operators'
 
 @Injectable({
   providedIn: 'root',
@@ -14,12 +17,21 @@ export class PlanetService {
     new Planet(1, 'Aldebaran', 1.5, 'Jedi', 1986, "assets/images/aldebaran.jpg"),
     new Planet(2, 'Tatooine', 69, 'Empire', 2020, "assets/images/tatooine.png"),
   ];
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  apiURL = 'http://localhost:3000/planet';
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': "application/json"
+    })
+  };
 
   // Fonction qui retournera toutes nos planètes (celles qui sont contenu dans l'attribut planets).
   // On l'utilisera notamment dans le composant qui affichera toutes nos planètes (planets.component.ts)
-  getAllPlanets(): Planet[] {
-    return this.planets;
+  getAllPlanets(): Observable<Planet[]> {
+    return this.http.get<Planet[]>(this.apiURL, this.httpOptions).pipe(retry(1),
+      catchError(this.handleError)
+    );
   }
 
   // Cette fonction qui prends en paramètre un id et qui retournera un objet Planet.
@@ -48,4 +60,18 @@ export class PlanetService {
     this.planets.filter(planetUpdate => planet.id === planetUpdate.id)[0] = planet;
     return this.planets;
   }
+
+  handleError(error) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      // Get client-side error
+      errorMessage = error.error.message;
+    } else {
+      // Get server-side error
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    window.alert(errorMessage);
+    return throwError(errorMessage);
+  }
+
 }
