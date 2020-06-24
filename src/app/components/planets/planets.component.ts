@@ -20,6 +20,8 @@ export class PlanetsComponent implements OnInit {
   constructor(private planetService: PlanetService, private loggerService: LoggerService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    //Methode Local
+
     // Nous initialisons notre attribut planets (this.planets) en lui assignant le tableau de planètes contenu dans planet.service.ts.
     // this.planets = this.planetService.getAllPlanets();
     // this.loggerService.loaderService();
