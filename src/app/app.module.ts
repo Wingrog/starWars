@@ -49,7 +49,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     FormsModule, //pour utiliser les formulaires
     ToastrModule.forRoot(), //pour utiliser les notifications
-    HttpClientModule,
+    HttpClientModule, //pour le back end
   ],
   providers: [],
   bootstrap: [AppComponent]
