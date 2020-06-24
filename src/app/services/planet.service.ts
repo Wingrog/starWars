@@ -18,7 +18,6 @@ export class PlanetService {
     new Planet(2, 'Tatooine', 69, 'Empire', 2020, "assets/images/tatooine.png"),
   ];
   constructor(private http: HttpClient) {
-    this.planets = [];
   }
 
   apiURL = 'http://localhost:3000/planet';
