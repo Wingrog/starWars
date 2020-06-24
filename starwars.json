@@ -6,31 +6,31 @@
       "nbHabitant": 10,
       "allegiance": "Empire",
       "nbKmTerre": 200,
-      "image": "https://cdn.radiofrance.fr/s3/cruiser-production/2017/03/12292fb9-d53f-4419-a5ce-61c123cfcc97/838_planete.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/23/DesertPlanet.jpg"
     },
     {
       "nom": "Terre",
       "nbHabitant": 60000000,
       "allegiance": "Human",
       "nbKmTerre": 500,
-      "image": "https://cdn.radiofrance.fr/s3/cruiser-production/2017/03/12292fb9-d53f-4419-a5ce-61c123cfcc97/838_planete.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Earth_by_the_EPIC_Team_on_21_April_2018.png",
       "id": 2
-    },
-    {
-      "nom": "Mercure",
-      "nbHabitant": 6900000,
-      "allegiance": "Mercurien",
-      "nbKmTerre": 80000,
-      "image": "https://cdn.radiofrance.fr/s3/cruiser-production/2017/03/12292fb9-d53f-4419-a5ce-61c123cfcc97/838_planete.jpg",
-      "id": 3
     },
     {
       "nom": "Pluton",
       "nbHabitant": 58452,
       "allegiance": "Plutonien",
       "nbKmTerre": 85000,
-      "image": "https://cdn.radiofrance.fr/s3/cruiser-production/2017/03/12292fb9-d53f-4419-a5ce-61c123cfcc97/838_planete.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/80/Nh-pluto-in-true-color_2x_JPEG.jpg",
       "id": 4
+    },
+    {
+      "nom": "Mercure",
+      "nbHabitant": 200000,
+      "allegiance": "Mercurien",
+      "nbKmTerre": 120000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Mercury_in_color_-_Prockter07_centered.jpg/280px-Mercury_in_color_-_Prockter07_centered.jpg",
+      "id": 5
     }
   ],
   "vaisseau": [

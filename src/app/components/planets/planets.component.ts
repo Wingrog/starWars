@@ -24,7 +24,7 @@ export class PlanetsComponent implements OnInit {
     // this.planets = this.planetService.getAllPlanets();
     // this.loggerService.loaderService();
     console.log("Ici je demande mes données");
-    this.planetService.getAllPlanets().subscribe(data => {
+    this.planetService.getPlanets().subscribe(data => {
       this.planets = data;
       console.log("C'est ok, je récupère les données !");
 
@@ -38,6 +38,7 @@ export class PlanetsComponent implements OnInit {
     this.planets = this.planetService.deletePlanet(planet);
     // On affiche la notification à l'utilisateur !
     this.toastr.error("La planète " + planet.nom + " à été supprimée!");
+
 
   }
 

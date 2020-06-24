@@ -17,7 +17,9 @@ export class PlanetService {
     new Planet(1, 'Aldebaran', 1.5, 'Jedi', 1986, "assets/images/aldebaran.jpg"),
     new Planet(2, 'Tatooine', 69, 'Empire', 2020, "assets/images/tatooine.png"),
   ];
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.planets = [];
+  }
 
   apiURL = 'http://localhost:3000/planet';
   httpOptions = {
@@ -28,10 +30,8 @@ export class PlanetService {
 
   // Fonction qui retournera toutes nos planètes (celles qui sont contenu dans l'attribut planets).
   // On l'utilisera notamment dans le composant qui affichera toutes nos planètes (planets.component.ts)
-  getAllPlanets(): Observable<Planet[]> {
-    return this.http.get<Planet[]>(this.apiURL, this.httpOptions).pipe(retry(1),
-      catchError(this.handleError)
-    );
+  getAllPlanets(): Planet[] {
+    return this.planets;
   }
 
   // Cette fonction qui prends en paramètre un id et qui retournera un objet Planet.
@@ -59,6 +59,12 @@ export class PlanetService {
     // Sauf que derrière on lui change sa valeure.
     this.planets.filter(planetUpdate => planet.id === planetUpdate.id)[0] = planet;
     return this.planets;
+  }
+
+  getPlanets(): Observable<Planet[]> {
+    return this.http.get<Planet[]>(this.apiURL, this.httpOptions).pipe(retry(1),
+      catchError(this.handleError)
+    );
   }
 
   handleError(error) {
