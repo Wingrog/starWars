@@ -14,14 +14,6 @@ export class VaisseauService {
   ];
 
 
-  apiURL = 'http://localhost:3000/vaisseau';
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': "application/json"
-    })
-  };
-
-  constructor(private http: HttpClient) { }
   getAllVehiculs(): Vaisseau[] {
     return this.vehiculs; //Fonction qui va retourner tous nos vaisseaux
   }
@@ -45,6 +37,23 @@ export class VaisseauService {
     return this.vehiculs;
   }
 
+
+
+
+
+
+
+  // Methode GET sur serveur Back-End
+
+  constructor(private http: HttpClient) { }
+
+
+  apiURL = 'http://localhost:3000/vaisseau';
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': "application/json"
+    })
+  };
 
   handleError(error) {
     let errorMessage = '';

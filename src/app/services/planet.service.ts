@@ -17,15 +17,7 @@ export class PlanetService {
     new Planet(1, 'Aldebaran', 1.5, 'Jedi', 1986, "assets/images/aldebaran.jpg"),
     new Planet(2, 'Tatooine', 69, 'Empire', 2020, "assets/images/tatooine.png"),
   ];
-  constructor(private http: HttpClient) {
-  }
 
-  apiURL = 'http://localhost:3000/planet';
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': "application/json"
-    })
-  };
 
   // Fonction qui retournera toutes nos planètes (celles qui sont contenu dans l'attribut planets).
   // On l'utilisera notamment dans le composant qui affichera toutes nos planètes (planets.component.ts)
@@ -65,6 +57,26 @@ export class PlanetService {
       catchError(this.handleError)
     );
   }
+
+
+
+
+
+
+  //Methode GET Serveur Back End
+
+
+  constructor(private http: HttpClient) {
+  }
+
+  apiURL = 'http://localhost:3000/planet';
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': "application/json"
+    })
+  };
+
+
 
   handleError(error) {
     let errorMessage = '';
