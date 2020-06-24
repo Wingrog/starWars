@@ -52,11 +52,6 @@ export class PlanetService {
     return this.planets;
   }
 
-  getPlanets(): Observable<Planet[]> {
-    return this.http.get<Planet[]>(this.apiURL, this.httpOptions).pipe(retry(1),
-      catchError(this.handleError)
-    );
-  }
 
 
 
@@ -89,6 +84,14 @@ export class PlanetService {
     }
     window.alert(errorMessage);
     return throwError(errorMessage);
+  }
+
+
+
+  getPlanets(): Observable<Planet[]> {
+    return this.http.get<Planet[]>(this.apiURL, this.httpOptions).pipe(retry(1),
+      catchError(this.handleError)
+    );
   }
 
 }

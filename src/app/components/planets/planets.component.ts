@@ -23,11 +23,15 @@ export class PlanetsComponent implements OnInit {
     // Nous initialisons notre attribut planets (this.planets) en lui assignant le tableau de planètes contenu dans planet.service.ts.
     // this.planets = this.planetService.getAllPlanets();
     // this.loggerService.loaderService();
+
+
+
+    //Methode GET Back End
+
     console.log("Ici je demande mes données");
     this.planetService.getPlanets().subscribe(data => {
       this.planets = data;
       console.log("C'est ok, je récupère les données !");
-
     })
   }
 
@@ -38,8 +42,8 @@ export class PlanetsComponent implements OnInit {
     this.planets = this.planetService.deletePlanet(planet);
     // On affiche la notification à l'utilisateur !
     this.toastr.error("La planète " + planet.nom + " à été supprimée!");
-
-
   }
+
+
 
 }
