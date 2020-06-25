@@ -15,15 +15,23 @@ export class EditVaisseauComponent implements OnInit {
 
   constructor(private vaisseauService: VaisseauService, private router: Router, private activatedRoute: ActivatedRoute, private toastr: ToastrService) { } //on injecte ce que l'on va utiliser
 
+  // Récupération de l'ID au chargement de la page
   ngOnInit(): void {
-    const id = parseInt(this.activatedRoute.snapshot.paramMap.get('id')); //pour récupérer l'ID de l'URL
-    // this.vaisseau = this.vaisseauService.getOneVehiculsById(id); //on recupere le vaisseau en fonction de son ID
+    this.isLoading = true;
+    this.vaisseauService.getOneVaisseau(parseInt(this.activatedRoute.snapshot.paramMap.get('id'))).subscribe((data: Vaisseau) => {
+      this.vaisseau = data;
+      this.isLoading = false;
+    });
   }
 
-
+  isLoading: boolean;
+  // JE MODIFIE UN VAISSEAU
   editVaisseau(): void {
-    this.vaisseauService.editVaisseau(this.vaisseau);
-    this.router.navigate(['/home']); //pour rediriger l'utilisateur, dans ce cas, on le renvoit sur le home
-    this.toastr.success("Le vaisseau à bien été modifiée !"); // on affiche la notification !
+    this.isLoading = true;
+    this.vaisseauService.editVaisseau(this.vaisseau).subscribe(then => {
+      this.isLoading = false;
+      this.router.navigate(['/vaisseaux']); // Redirection de l'utilisateur
+      this.toastr.success("Le vaisseau à bien été modifié !"); // On affiche une notification
+    })
   }
 }

@@ -22,7 +22,13 @@ export class EditPlanetComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private planetService: PlanetService, private router: Router, private toastr: ToastrService) { }
 
 
+  // Récupération de l'ID au chargement de la page
   ngOnInit(): void {
+    this.isLoading = true;
+    this.planetService.getOnePlanet(parseInt(this.activatedRoute.snapshot.paramMap.get('id'))).subscribe((data: Planet) => {
+      this.planet = data;
+      this.isLoading = false;
+    });
   }
 
   isLoading: boolean;

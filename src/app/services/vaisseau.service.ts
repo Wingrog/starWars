@@ -28,11 +28,6 @@ export class VaisseauService {
     return this.vehiculs; //on retourne le tableau
   }
 
-  editVaisseau(vaisseau: Vaisseau): Vaisseau[] {
-    this.vehiculs.filter(vaisseauUpdate => vaisseau === vaisseauUpdate)[0] = vaisseau; //on edite le vaisseau sélectionné
-    return this.vehiculs;
-  }
-
 
 
 
@@ -86,13 +81,20 @@ export class VaisseauService {
       );
   }
 
-
+  // AJOUTER UN
   addVaisseau(vaisseau: Vaisseau): Observable<Vaisseau> {
     return this.http.post<Vaisseau>(this.apiURL, vaisseau, this.httpOptions).pipe(retry(1),
       catchError(this.handleError)
     );
   }
 
+
+  // MODIFIER UN VAISSEAU
+  editVaisseau(vaisseau: Vaisseau): Observable<Vaisseau> {
+    return this.http.put<Vaisseau>(this.apiURL + '/' + vaisseau.id, vaisseau, this.httpOptions).pipe(retry(1),
+      catchError(this.handleError)
+    );
+  }
 
 
 
