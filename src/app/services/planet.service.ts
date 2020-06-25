@@ -9,27 +9,6 @@ import { catchError, retry } from 'rxjs/internal/operators'
 })
 export class PlanetService {
 
-  // On a un attribut qui est initialisé avec un tableau d'objet Planet (models/planet.ts).
-  // Le new Planet(...) appelera le constructor de notre modele planet afin de créer nos objets
-  // Dans tous nos services, nous manipulerons cet attribut pour ajouter, supprimer, editer, récupérer une ou toutes nos planètes
-
-  planets = [ //Ajout de nos instances dans un tableau planets
-    new Planet(1, 'Aldebaran', 1.5, 'Jedi', 1986, "assets/images/aldebaran.jpg"),
-    new Planet(2, 'Tatooine', 69, 'Empire', 2020, "assets/images/tatooine.png"),
-  ];
-
-
-  // Fonction qui retournera toutes nos planètes (celles qui sont contenu dans l'attribut planets).
-  // On l'utilisera notamment dans le composant qui affichera toutes nos planètes (planets.component.ts)
-
-  deletePlanet(planet: Planet): Planet[] {
-    // Actualise le tableau planet sans la planete rentrée en argument
-    this.planets = this.planets.filter(planeteToDelete => planet !== planeteToDelete)
-    return this.planets;
-  }
-
-
-
 
   // SERVEUR BACK END
 

@@ -45,18 +45,12 @@ export class PlanetsComponent implements OnInit {
   }
 
 
-
-
   //FONCTIONS
 
 
   // Fonction appelé lors d'une action de clique (click) sur un lien contenu dans le fichier planets.component.html
-  // Elle prends en paramètre l'objet planete à supprimer.
   deletePlanet(planet: Planet) {
-    // Lors d'un clique on appel la fonction deletePlanet de note planetService avec en paramètre la planète à supprimer.
-    this.planets = this.planetService.deletePlanet(planet);
-    // On affiche la notification à l'utilisateur !
-    this.toastr.error("La planète " + planet.nom + " à été supprimée!");
+    console.log("A faire");
   }
 
 
