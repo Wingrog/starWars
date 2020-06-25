@@ -19,17 +19,17 @@ export class AddPlanetComponent implements OnInit {
   // On injecte également le service ToastrService pour afficher une notification à l'utilisateur.
   constructor(private planetService: PlanetService, private router: Router, private toastr: ToastrService) { }
 
+  isLoading: boolean;
+
   ngOnInit(): void {
   }
 
-  submitPlanet(): void {
-    console.log(this.planet); // Renvoi bien notre nouvelle planete.
-    // On appel notre service pour sauvegarder les données du formulaire via l'attribut planet du composant.
-    this.planetService.addPlanet(this.planet);
-    // On redirige l'utilisateur vers la liste des planètes qui devra avoir une élement en plus.
-    this.router.navigate(['/planets']);
-    // On envoit une notification à l'utilisateur.
-    this.toastr.success("La planète à bien été ajoutée !");
-  }
 
+  // ENVOI DES DONNEES SUR SERVEUR BACK END
+  submitPlanet(): void {
+    this.planetService.addPlanet(this.planet).subscribe(then => {
+      this.router.navigate(['/planets']);
+      this.toastr.success("La planète a bien été ajoutée !");
+    });
+  }
 }

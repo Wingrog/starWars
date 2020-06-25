@@ -1,32 +1,31 @@
 <h1>Ajouter un vaisseau</h1>
+<div *ngIf="!isLoading">
+  <form #vaisseauForm="ngForm" (ngSubmit)="submitVaisseau()">
 
-<form #vaisseauForm="ngForm" (ngSubmit)="submitVaisseau()">
+    <label for="nom">Renseigner le nom du vaisseau</label>
+    <input type="text" class="form-control" name="nom" id="nom" required [(ngModel)]="vaisseau.nom" #nom="ngModel">
 
-  <label for="id">Renseigner l'ID du vaisseau</label>
-  <input type="number" class="form-control" name="id" id="id" required [(ngModel)]="vaisseau.id" #id="ngModel">
-  <div [hidden]="id.valid" class="alert alert-warning">
-    Veuillez saisir un ID
-  </div>
+    <label for="id">Renseigner le modele du vaisseau</label>
+    <input type="text" class="form-control" name="modele" id="modele" required [(ngModel)]="vaisseau.model"
+      #modele="ngModel">
 
-  <label for="nom">Renseigner le nom du vaisseau</label>
-  <input type="text" class="form-control" name="nom" id="nom" required [(ngModel)]="vaisseau.nom" #nom="ngModel">
+    <label for="id">Vitesse supérieure à celle de la lumière</label>
+    <input type="number" class="form-control" name="vitesse" id="vitesse" required [(ngModel)]="vaisseau.lightSpeed"
+      #vitesse="ngModel">
 
-  <label for="id">Renseigner le modele du vaisseau</label>
-  <input type="text" class="form-control" name="modele" id="modele" required [(ngModel)]="vaisseau.model"
-    #modele="ngModel">
+    <label for="id">Renseigner le nombre de passager</label>
+    <input type="number" class="form-control" name="nbPassenger" id="nbPassenger" required
+      [(ngModel)]="vaisseau.nbPassenger" #nbPassenger="ngModel">
 
-  <label for="id">Vitesse supérieure à celle de la lumière</label>
-  <input type="number" class="form-control" name="vitesse" id="vitesse" required [(ngModel)]="vaisseau.lightSpeed"
-    #vitesse="ngModel">
+    <label for="id">Renseigner une image</label>
+    <input type="string" class="form-control" name="image" id="image" required [(ngModel)]="vaisseau.image"
+      #image="ngModel">
 
-  <label for="id">Renseigner le nombre de passager</label>
-  <input type="number" class="form-control" name="nbPassenger" id="nbPassenger" required
-    [(ngModel)]="vaisseau.nbPassenger" #nbPassenger="ngModel">
+    <input [disabled]="!vaisseauForm.valid" type="submit" value="Envoyer">
 
-  <label for="id">Renseigner une image</label>
-  <input type="string" class="form-control" name="image" id="image" required [(ngModel)]="vaisseau.image"
-    #image="ngModel">
+  </form>
+</div>
 
-  <input [disabled]="!vaisseauForm.valid" type="submit" value="Envoyer">
-
-</form>
+<div *ngIf="isLoading">
+  <p>Traitement des données....</p>
+</div>

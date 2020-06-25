@@ -21,23 +21,6 @@ export class PlanetService {
 
   // Fonction qui retournera toutes nos planètes (celles qui sont contenu dans l'attribut planets).
   // On l'utilisera notamment dans le composant qui affichera toutes nos planètes (planets.component.ts)
-  getAllPlanets(): Planet[] {
-    return this.planets;
-  }
-
-  // Cette fonction qui prends en paramètre un id et qui retournera un objet Planet.
-  getOnePlanetById(id: number): Planet {
-    // La fonction filter va créer un nouveau tableau à partir d'une condition à vérifier.
-    // La fonction filter retourne un tableau, l'id d'une planète est unique. Conclusion la fonction filter retournera donc un tableau avec un seul élément planete. Or notre fonction ne retourne pas un tableau avec un élément planete mais un objet planete. C'est pourquoi le 0 nous permet de retrouver ce premier objet.
-    return this.planets.filter(planet => planet.id === id)[0];
-
-  }
-
-  // Cette fonction prends en parametre un objet planet.
-  addPlanet(planet: Planet): void {
-    // Ajoute cet élement dans notre attribut qui contient le tableau de planète.
-    this.planets.push(planet)
-  }
 
   deletePlanet(planet: Planet): Planet[] {
     // Actualise le tableau planet sans la planete rentrée en argument
@@ -51,7 +34,6 @@ export class PlanetService {
     this.planets.filter(planetUpdate => planet.id === planetUpdate.id)[0] = planet;
     return this.planets;
   }
-
 
 
 
@@ -98,7 +80,7 @@ export class PlanetService {
     );
   }
 
-  //RETOURNE LA PLANETE SELON SON ID
+  // RETOURNE LA PLANETE SELON SON ID
 
   getOnePlanet(id: number): Observable<Planet> {
     return this.http.get<Planet>(this.apiURL + '/' + id)
@@ -106,6 +88,14 @@ export class PlanetService {
         retry(1),
         catchError(this.handleError)
       );
+  }
+
+
+  // AJOUT DUNE PLANETE
+  addPlanet(planet: Planet): Observable<Planet> {
+    return this.http.post<Planet>(this.apiURL, planet, this.httpOptions).pipe(
+      catchError(this.handleError)
+    );
   }
 
 }

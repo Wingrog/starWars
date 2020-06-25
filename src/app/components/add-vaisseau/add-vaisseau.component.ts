@@ -14,14 +14,15 @@ export class AddVaisseauComponent implements OnInit {
 
   constructor(private vaisseauService: VaisseauService, private router: Router, private toastr: ToastrService) { }
 
+  isLoading: boolean;
+
   ngOnInit(): void {
   }
 
   submitVaisseau(): void {
-    console.log(this.vaisseau)  //renvoit bien notre nouveau vaisseau
-    this.vaisseauService.addVaisseau(this.vaisseau); // on va lancer la fonction addVaisseau qui se trouve dans le VaisseauService pour ajouter le vaisseau
-    this.router.navigate(['/vaisseaux']); // on redirige l'utilisateur sur la root
-    this.toastr.success("Le vaisseau à bien été ajouté !"); // on affiche la notification
+    this.vaisseauService.addVaisseau(this.vaisseau).subscribe(then => {
+      this.router.navigate(['/vaisseaux']);
+      this.toastr.success("Le vaisseau à bien été ajouté !"); // on affiche la notification
+    })
   }
-
 }

@@ -24,12 +24,6 @@ export class PlanetDetailComponent implements OnInit {
   isLoading: boolean;
 
   ngOnInit(): void {
-    // On récupère notre ID dans l'URL gràace au service ActivatedRoute
-    // const id = parseInt(this.route.snapshot.paramMap.get('id')); //pour récupérer l'ID de l'URL
-    // On initialise notre attribut planet grâce à notre PlanetService et à la constante ID récupérée au dessus que l'on passera en paramètre)
-    // this.planet = this.PlanetService.getOnePlanetById(id);
-
-
 
     // METHODE SERVEUR BACK END POUR AFFICHER LA PLANETE SELON SON ID
     this.isLoading = true;

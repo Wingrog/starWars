@@ -22,9 +22,6 @@ export class VaisseauService {
   //   return this.vehiculs.filter(vehiculs => vehiculs.id === id)[0]; //retourne un seul vaisseau selon l'id
   // }
 
-  addVaisseau(vaisseau: Vaisseau): void {
-    this.vehiculs.push(vaisseau); //on ajoute le vaisseau dans le tableau vehiculs
-  }
 
   deleteVaisseau(vehiculs: Vaisseau): Vaisseau[] {
     this.vehiculs = this.vehiculs.filter(vaisseauToDelete => vehiculs !== vaisseauToDelete) //on supprime le vaisseau sélectionnée
@@ -88,4 +85,15 @@ export class VaisseauService {
         catchError(this.handleError)
       );
   }
+
+
+  addVaisseau(vaisseau: Vaisseau): Observable<Vaisseau> {
+    return this.http.post<Vaisseau>(this.apiURL, vaisseau, this.httpOptions).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+
+
+
 }
