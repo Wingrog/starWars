@@ -1,5 +1,6 @@
-<h1>Ajouter un vaisseau</h1>
 <div *ngIf="!isLoading">
+  <h1>Ajouter un vaisseau</h1>
+
   <form #vaisseauForm="ngForm" (ngSubmit)="submitVaisseau()">
 
     <label for="nom">Renseigner le nom du vaisseau</label>

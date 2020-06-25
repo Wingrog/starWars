@@ -21,7 +21,7 @@
       "allegiance": "Plutonien",
       "nbKmTerre": 85000,
       "image": "https://upload.wikimedia.org/wikipedia/commons/8/80/Nh-pluto-in-true-color_2x_JPEG.jpg",
-      "id": 4
+      "id": 3
     },
     {
       "nom": "Mercure",
@@ -29,7 +29,7 @@
       "allegiance": "Mercurien",
       "nbKmTerre": 120000,
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Mercury_in_color_-_Prockter07_centered.jpg/280px-Mercury_in_color_-_Prockter07_centered.jpg",
-      "id": 5
+      "id": 4
     }
   ],
   "vaisseau": [{
@@ -55,14 +55,6 @@
       "nbPassenger": 5,
       "image": "https://voiture.kidioui.fr/image/img-auto/renault-zoe.jpg",
       "id": 3
-    },
-    {
-      "id": 4,
-      "nom": "87",
-      "model": "ào",
-      "lightSpeed": 896,
-      "nbPassenger": 465,
-      "image": "assets/images/aldebaran.jpg"
     }
   ]
 }
