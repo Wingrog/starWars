@@ -24,8 +24,8 @@ export class EditPlanetComponent implements OnInit {
 
   // Ici nous récupérons note id puis nous assignons à this.planet la valeure de retour de notre fonction getOneById dans le service planetService en passant en parametre l'id récupéré.
   ngOnInit(): void {
-    const id = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
-    this.planet = this.planetService.getOnePlanetById(id);
+    // const id = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
+    // this.planet = this.planetService.getOnePlanetById(id);
   }
 
   editPlanet(): void {

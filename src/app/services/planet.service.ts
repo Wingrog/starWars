@@ -56,10 +56,7 @@ export class PlanetService {
 
 
 
-
-
-  //Methode GET Serveur Back End
-
+  // SERVEUR BACK END
 
   constructor(private http: HttpClient) {
   }
@@ -71,6 +68,7 @@ export class PlanetService {
     })
   };
 
+  // MESSAGE ERREUR SI PAS DE CONNEXION
 
 
   handleError(error) {
@@ -88,13 +86,19 @@ export class PlanetService {
 
 
 
+
+  // MES FONCTIONS
+
+
+  //RETOURNE TOUTES LES PLANETES
+
   getPlanets(): Observable<Planet[]> {
     return this.http.get<Planet[]>(this.apiURL, this.httpOptions).pipe(retry(1),
       catchError(this.handleError)
     );
   }
 
-
+  //RETOURNE LA PLANETE SELON SON ID
 
   getOnePlanet(id: number): Observable<Planet> {
     return this.http.get<Planet>(this.apiURL + '/' + id)
