@@ -22,20 +22,17 @@ export class EditPlanetComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private planetService: PlanetService, private router: Router, private toastr: ToastrService) { }
 
 
-  // Ici nous récupérons note id puis nous assignons à this.planet la valeure de retour de notre fonction getOneById dans le service planetService en passant en parametre l'id récupéré.
   ngOnInit(): void {
-    // const id = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
-    // this.planet = this.planetService.getOnePlanetById(id);
   }
 
+  isLoading: boolean;
+  // JE MODIFIE UNE PLANETE
   editPlanet(): void {
-    // Je met à jour le contenu de mes planètes dans mon service
-    this.planetService.editPlanet(this.planet);
-    // Je redirige l'utilisateur vers /home
-    this.router.navigate(['/home']);
-    this.toastr.success("La planète à bien été modifiée !"); // on affiche la notification
-
-
+    this.isLoading = true;
+    this.planetService.editPlanet(this.planet).subscribe(then => {
+      this.isLoading = false;
+      this.router.navigate(['/planets']);
+    })
   }
 
 }

@@ -28,13 +28,6 @@ export class PlanetService {
     return this.planets;
   }
 
-  editPlanet(planet: Planet): Planet[] {
-    // On récupère la planète en fonction de son id puis la met à jour.
-    // Sauf que derrière on lui change sa valeure.
-    this.planets.filter(planetUpdate => planet.id === planetUpdate.id)[0] = planet;
-    return this.planets;
-  }
-
 
 
 
@@ -94,6 +87,13 @@ export class PlanetService {
   // AJOUT DUNE PLANETE
   addPlanet(planet: Planet): Observable<Planet> {
     return this.http.post<Planet>(this.apiURL, planet, this.httpOptions).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  // MODIFIER UNE PLANETE
+  editPlanet(planet: Planet) {
+    return this.http.put<Planet>(this.apiURL + '/' + planet.id, planet, this.httpOptions).pipe(
       catchError(this.handleError)
     );
   }
