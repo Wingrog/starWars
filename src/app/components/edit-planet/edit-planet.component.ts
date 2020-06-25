@@ -31,7 +31,8 @@ export class EditPlanetComponent implements OnInit {
     this.isLoading = true;
     this.planetService.editPlanet(this.planet).subscribe(then => {
       this.isLoading = false;
-      this.router.navigate(['/planets']);
+      this.router.navigate(['/planets']); // Redirection de l'utilisateur
+      this.toastr.success("La planète à bien été modifiée !"); // On affiche une notification
     })
   }
 

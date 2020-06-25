@@ -19,10 +19,14 @@ export class AddVaisseauComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  // ENVOI DES DONNEES SUR SERVEUR BACK END
   submitVaisseau(): void {
+    this.isLoading = true;
     this.vaisseauService.addVaisseau(this.vaisseau).subscribe(then => {
-      this.router.navigate(['/vaisseaux']);
-      this.toastr.success("Le vaisseau à bien été ajouté !"); // on affiche la notification
+      this.isLoading = false;
+      this.router.navigate(['/vaisseaux']); // Redirection de l'utilisateur
+      this.toastr.success("Le vaisseau à bien été ajouté !"); // On affiche une notification
     })
   }
 }

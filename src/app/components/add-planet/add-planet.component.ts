@@ -27,9 +27,11 @@ export class AddPlanetComponent implements OnInit {
 
   // ENVOI DES DONNEES SUR SERVEUR BACK END
   submitPlanet(): void {
+    this.isLoading = true;
     this.planetService.addPlanet(this.planet).subscribe(then => {
-      this.router.navigate(['/planets']);
-      this.toastr.success("La planète a bien été ajoutée !");
+      this.isLoading = false;
+      this.router.navigate(['/planets']); // Redirection de l'utilisateur
+      this.toastr.success("La planète a bien été ajoutée !"); // On affiche une notification
     });
   }
 }
