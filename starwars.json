@@ -1,6 +1,5 @@
 {
-  "planet": [
-    {
+  "planet": [{
       "id": 1,
       "nom": "Tatooine",
       "nbHabitant": 10,
@@ -33,8 +32,7 @@
       "id": 4
     }
   ],
-  "vaisseau": [
-    {
+  "vaisseau": [{
       "id": 1,
       "nom": "x-Wing",
       "model": "Audi",
