@@ -16,7 +16,7 @@ export class VaisseauxComponent implements OnInit {
   isLoading: boolean;
 
   ngOnInit(): void {
-    this.vaisseaux = this.vaisseauService.getAllVehiculs();
+    // this.vaisseaux = this.vaisseauService.getAllVehiculs();
     this.loggerService.loaderService(); //on lance la fonction loaderService qui se trovue dans le LoggerService
 
     this.isLoading = true;

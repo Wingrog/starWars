@@ -14,14 +14,13 @@ export class VaisseauService {
   ];
 
 
-  getAllVehiculs(): Vaisseau[] {
-    return this.vehiculs; //Fonction qui va retourner tous nos vaisseaux
-  }
+  // getAllVehiculs(): Vaisseau[] {
+  //   return this.vehiculs; //Fonction qui va retourner tous nos vaisseaux
+  // }
 
-  getOneVehiculsById(id: number): Vaisseau {
-    return this.vehiculs.filter(vehiculs => vehiculs.id === id)[0]; //retourne un seul vaisseau selon l'id
-
-  }
+  // getOneVehiculsById(id: number): Vaisseau {
+  //   return this.vehiculs.filter(vehiculs => vehiculs.id === id)[0]; //retourne un seul vaisseau selon l'id
+  // }
 
   addVaisseau(vaisseau: Vaisseau): void {
     this.vehiculs.push(vaisseau); //on ajoute le vaisseau dans le tableau vehiculs
