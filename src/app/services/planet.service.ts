@@ -61,7 +61,8 @@ export class PlanetService {
   }
 
 
-  // AJOUT DUNE PLANETE
+  // AJOUTE DUNE PLANETE
+
   addPlanet(planet: Planet): Observable<Planet> {
     return this.http.post<Planet>(this.apiURL, planet, this.httpOptions).pipe(retry(1),
       catchError(this.handleError)
@@ -69,6 +70,7 @@ export class PlanetService {
   }
 
   // MODIFIER UNE PLANETE
+
   editPlanet(planet: Planet): Observable<Planet> {
     return this.http.put<Planet>(this.apiURL + '/' + planet.id, planet, this.httpOptions).pipe(retry(1),
       catchError(this.handleError)
