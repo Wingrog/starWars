@@ -26,6 +26,8 @@ export class VaisseauxComponent implements OnInit {
     })
   }
 
+
+  // Fonction appelée depuis le html
   deleteVaisseau(id: number): void {
     this.isLoading = true;
     this.vaisseauService.deleteVaisseau(id).subscribe(then => {
@@ -36,5 +38,6 @@ export class VaisseauxComponent implements OnInit {
       });
     })
   }
+
 
 }
