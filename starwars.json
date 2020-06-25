@@ -1,5 +1,6 @@
 {
-  "planet": [{
+  "planet": [
+    {
       "id": 1,
       "nom": "Tatooine",
       "nbHabitant": 10,
@@ -32,7 +33,8 @@
       "id": 4
     }
   ],
-  "vaisseau": [{
+  "vaisseau": [
+    {
       "id": 1,
       "nom": "x-Wing",
       "model": "Audi",
@@ -55,14 +57,6 @@
       "nbPassenger": 5,
       "image": "https://voiture.kidioui.fr/image/img-auto/renault-zoe.jpg",
       "id": 3
-    },
-    {
-      "id": 4,
-      "nom": "ouiuijk",
-      "model": "om",
-      "lightSpeed": 26,
-      "nbPassenger": 4,
-      "image": "kjhn"
     }
   ]
 }
