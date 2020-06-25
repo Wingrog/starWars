@@ -68,8 +68,22 @@ export class VaisseauService {
     return throwError(errorMessage);
   }
 
+
+
+  //LES FONCTIONS BACK END
+
   getVaisseaux(): Observable<Vaisseau[]> {
     return this.http.get<Vaisseau[]>(this.apiURL)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      );
+  }
+
+
+  // Je recupère un vaisseau selon son ID
+  getOneVaisseau(id: number): Observable<Vaisseau> {
+    return this.http.get<Vaisseau>(this.apiURL + '/' + id)
       .pipe(
         retry(1),
         catchError(this.handleError)

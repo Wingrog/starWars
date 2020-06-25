@@ -19,6 +19,8 @@ export class PlanetsComponent implements OnInit {
   // Nous injectons également le ToastrService pour afficher des notifications aux visiteurs.
   constructor(private planetService: PlanetService, private loggerService: LoggerService, private toastr: ToastrService) { }
 
+  isLoading: boolean;
+
   ngOnInit(): void {
     //Methode Local
 
@@ -27,8 +29,13 @@ export class PlanetsComponent implements OnInit {
     // this.loggerService.loaderService();
 
 
+    //Methode GET Back End pour récupérer toutes mes planètes
 
-    //Methode GET Back End
+    this.isLoading = true;
+    this.planetService.getPlanets().subscribe((data: Planet[]) => {
+      this.planets = data;
+      this.isLoading = false;
+    });
 
     console.log("Ici je demande mes données");
     this.planetService.getPlanets().subscribe(data => {
@@ -36,6 +43,12 @@ export class PlanetsComponent implements OnInit {
       console.log("C'est ok, je récupère les données !");
     })
   }
+
+
+
+
+  //FONCTIONS
+
 
   // Fonction appelé lors d'une action de clique (click) sur un lien contenu dans le fichier planets.component.html
   // Elle prends en paramètre l'objet planete à supprimer.

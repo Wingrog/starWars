@@ -19,10 +19,28 @@ export class PlanetDetailComponent implements OnInit {
   // Injection de notre planeteService
   constructor(private route: ActivatedRoute, private PlanetService: PlanetService) { }
 
+
+
+  isLoading: boolean;
+
   ngOnInit(): void {
     // On récupère notre ID dans l'URL gràace au service ActivatedRoute
-    const id = parseInt(this.route.snapshot.paramMap.get('id')); //pour récupérer l'ID de l'URL
+    // const id = parseInt(this.route.snapshot.paramMap.get('id')); //pour récupérer l'ID de l'URL
     // On initialise notre attribut planet grâce à notre PlanetService et à la constante ID récupérée au dessus que l'on passera en paramètre)
-    this.planet = this.PlanetService.getOnePlanetById(id);
+    // this.planet = this.PlanetService.getOnePlanetById(id);
+
+
+
+    // METHODE SERVEUR BACK END POUR AFFICHER LA PLANETE SELON SON ID
+    this.isLoading = true;
+    this.PlanetService.getOnePlanet(parseInt(this.route.snapshot.paramMap.get('id'))).subscribe((data:
+      Planet) => {
+      this.planet = data;
+      this.isLoading = false;
+    });
+
+
+
+
   }
 }

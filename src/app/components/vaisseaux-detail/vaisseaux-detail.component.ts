@@ -14,8 +14,23 @@ export class VaisseauxDetailComponent implements OnInit {
   vehiculs: Vaisseau;
   constructor(private route: ActivatedRoute, private VaisseauService: VaisseauService) { } //on injecte ce que l'on va utiliser
 
+
+  isLoading: boolean;
   ngOnInit(): void {
-    this.id = parseInt(this.route.snapshot.paramMap.get('id')); //recuperer l'id qui se trouve dans l'url
-    this.vehiculs = this.VaisseauService.getOneVehiculsById(this.id); //recuperer un vehicule en fonction de son id
+    // this.id = parseInt(this.route.snapshot.paramMap.get('id')); //recuperer l'id qui se trouve dans l'url
+    // this.vehiculs = this.VaisseauService.getOneVehiculsById(this.id); //recuperer un vehicule en fonction de son id
+
+
+    // Je recupere le vaisseau selon son ID sur le serveur Back END
+
+    this.isLoading = true;
+    this.VaisseauService.getOneVaisseau(parseInt(this.route.snapshot.paramMap.get('id'))).subscribe((data:
+      Vaisseau) => {
+      this.vehiculs = data;
+      this.isLoading = false;
+    });
   }
+
+
+
 }

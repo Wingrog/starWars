@@ -94,4 +94,14 @@ export class PlanetService {
     );
   }
 
+
+
+  getOnePlanet(id: number): Observable<Planet> {
+    return this.http.get<Planet>(this.apiURL + '/' + id)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      );
+  }
+
 }
