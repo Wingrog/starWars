@@ -55,24 +55,22 @@ export class PlanetService {
   // RETOURNE LA PLANETE SELON SON ID
 
   getOnePlanet(id: number): Observable<Planet> {
-    return this.http.get<Planet>(this.apiURL + '/' + id)
-      .pipe(
-        retry(1),
-        catchError(this.handleError)
-      );
+    return this.http.get<Planet>(this.apiURL + '/' + id).pipe(retry(1),
+      catchError(this.handleError)
+    );
   }
 
 
   // AJOUT DUNE PLANETE
   addPlanet(planet: Planet): Observable<Planet> {
-    return this.http.post<Planet>(this.apiURL, planet, this.httpOptions).pipe(
+    return this.http.post<Planet>(this.apiURL, planet, this.httpOptions).pipe(retry(1),
       catchError(this.handleError)
     );
   }
 
   // MODIFIER UNE PLANETE
-  editPlanet(planet: Planet) {
-    return this.http.put<Planet>(this.apiURL + '/' + planet.id, planet, this.httpOptions).pipe(
+  editPlanet(planet: Planet): Observable<Planet> {
+    return this.http.put<Planet>(this.apiURL + '/' + planet.id, planet, this.httpOptions).pipe(retry(1),
       catchError(this.handleError)
     );
   }

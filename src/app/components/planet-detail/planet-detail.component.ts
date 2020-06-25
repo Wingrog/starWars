@@ -35,6 +35,5 @@ export class PlanetDetailComponent implements OnInit {
 
 
 
-
   }
 }

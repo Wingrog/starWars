@@ -88,7 +88,7 @@ export class VaisseauService {
 
 
   addVaisseau(vaisseau: Vaisseau): Observable<Vaisseau> {
-    return this.http.post<Vaisseau>(this.apiURL, vaisseau, this.httpOptions).pipe(
+    return this.http.post<Vaisseau>(this.apiURL, vaisseau, this.httpOptions).pipe(retry(1),
       catchError(this.handleError)
     );
   }
