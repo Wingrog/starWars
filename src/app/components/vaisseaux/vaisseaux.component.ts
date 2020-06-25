@@ -26,10 +26,15 @@ export class VaisseauxComponent implements OnInit {
     })
   }
 
-  deleteVaisseau(vaisseau: Vaisseau) {
-    this.vaisseaux = this.vaisseauService.deleteVaisseau(vaisseau); // on lance la fonction deleteVaisseau qui se trouve dans le VaisseauService
-    this.toastr.error("Le vaisseau " + vaisseau.nom + " à été supprimé!"); //on affiche la notification
-
+  deleteVaisseau(id: number): void {
+    this.isLoading = true;
+    this.vaisseauService.deleteVaisseau(id).subscribe(then => {
+      this.vaisseauService.getVaisseaux().subscribe((data: Vaisseau[]) => {
+        this.vaisseaux = data;
+        this.isLoading = false;
+        this.toastr.error("Le vaisseau à été supprimé !"); //on affiche la notification
+      });
+    })
   }
 
 }

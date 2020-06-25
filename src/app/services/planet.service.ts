@@ -10,7 +10,7 @@ import { catchError, retry } from 'rxjs/internal/operators'
 export class PlanetService {
 
 
-  // SERVEUR BACK END
+  // CONNEXION SERVEUR BACK END
 
   constructor(private http: HttpClient) {
   }
@@ -37,7 +37,6 @@ export class PlanetService {
     window.alert(errorMessage);
     return throwError(errorMessage);
   }
-
 
 
   // MES FONCTIONS
@@ -71,6 +70,14 @@ export class PlanetService {
 
   editPlanet(planet: Planet): Observable<Planet> {
     return this.http.put<Planet>(this.apiURL + '/' + planet.id, planet, this.httpOptions).pipe(retry(1),
+      catchError(this.handleError)
+    );
+  }
+
+  // SUPPRIMER UNE PLANETE
+
+  deletePlanet(id: number): Observable<Planet> {
+    return this.http.delete<Planet>(this.apiURL + '/' + id).pipe(retry(1),
       catchError(this.handleError)
     );
   }

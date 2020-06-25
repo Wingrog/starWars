@@ -8,31 +8,6 @@ import { Observable, throwError } from 'rxjs';
   providedIn: 'root',
 })
 export class VaisseauService {
-  vehiculs = [ //Ajout de nos instances dans un tableau vehiculs
-    new Vaisseau(1, 'Faucon Millenium', 'Audi', true, 300, "assets/images/fb_faucon.jpg"),
-    new Vaisseau(2, 'X-Wing', 'Bmw', false, 2, "assets/images/xwing.jpg"),
-  ];
-
-
-  // getAllVehiculs(): Vaisseau[] {
-  //   return this.vehiculs; //Fonction qui va retourner tous nos vaisseaux
-  // }
-
-  // getOneVehiculsById(id: number): Vaisseau {
-  //   return this.vehiculs.filter(vehiculs => vehiculs.id === id)[0]; //retourne un seul vaisseau selon l'id
-  // }
-
-
-  deleteVaisseau(vehiculs: Vaisseau): Vaisseau[] {
-    this.vehiculs = this.vehiculs.filter(vaisseauToDelete => vehiculs !== vaisseauToDelete) //on supprime le vaisseau sélectionnée
-    return this.vehiculs; //on retourne le tableau
-  }
-
-
-
-
-
-
 
   // Methode GET sur serveur Back-End
 
@@ -81,7 +56,7 @@ export class VaisseauService {
       );
   }
 
-  // AJOUTER UN
+  // AJOUTER UN VAISSEAU
   addVaisseau(vaisseau: Vaisseau): Observable<Vaisseau> {
     return this.http.post<Vaisseau>(this.apiURL, vaisseau, this.httpOptions).pipe(retry(1),
       catchError(this.handleError)
@@ -92,6 +67,15 @@ export class VaisseauService {
   // MODIFIER UN VAISSEAU
   editVaisseau(vaisseau: Vaisseau): Observable<Vaisseau> {
     return this.http.put<Vaisseau>(this.apiURL + '/' + vaisseau.id, vaisseau, this.httpOptions).pipe(retry(1),
+      catchError(this.handleError)
+    );
+  }
+
+
+  // SUPPRIMER UN VAISSEAU
+
+  deleteVaisseau(id: number): Observable<Vaisseau> {
+    return this.http.delete<Vaisseau>(this.apiURL + '/' + id).pipe(retry(1),
       catchError(this.handleError)
     );
   }

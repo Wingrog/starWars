@@ -22,12 +22,6 @@ export class PlanetsComponent implements OnInit {
   isLoading: boolean;
 
   ngOnInit(): void {
-    //Methode Local
-
-    // Nous initialisons notre attribut planets (this.planets) en lui assignant le tableau de planètes contenu dans planet.service.ts.
-    // this.planets = this.planetService.getAllPlanets();
-    // this.loggerService.loaderService();
-
 
     //Methode GET Back End pour récupérer toutes mes planètes
 
@@ -49,8 +43,16 @@ export class PlanetsComponent implements OnInit {
 
 
   // Fonction appelé lors d'une action de clique (click) sur un lien contenu dans le fichier planets.component.html
-  deletePlanet(planet: Planet) {
-    console.log("A faire");
+
+  deletePlanet(id: number): void {
+    this.isLoading = true;
+    this.planetService.deletePlanet(id).subscribe(then => {
+      this.planetService.getPlanets().subscribe((data: Planet[]) => {
+        this.planets = data;
+        this.isLoading = false;
+        this.toastr.error("La planète à été supprimée !"); //on affiche la notification
+      });
+    })
   }
 
 

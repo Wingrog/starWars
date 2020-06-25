@@ -19,7 +19,7 @@
       <td>{{ vaisseau.nbPassenger }}</td>
       <td><a class="btn btn-warning" [routerLink]="['/vaisseaux', vaisseau.id]">En savoir plus</a></td>
       <td><a class="btn btn-primary" [routerLink]="['/vaisseaux/update', vaisseau.id]">Editer</a></td>
-      <td> <a class="btn btn-danger" (click)="deleteVaisseau(vaisseau)">Supprimer</a>
+      <td> <a class="btn btn-danger" (click)="deleteVaisseau(vaisseau.id)">Supprimer</a>
       </td>
 
   </tbody>
