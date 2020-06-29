@@ -16,7 +16,7 @@ Il prendra en valeur le lien qui changera le composant adéquat dans le fichier 
     <!-- Equivalent d'une boucle for en Javascript (directive Angular).
     Elle définira une variable qui sera l'élement courant de chaque itération. this.planets correspondra à notre tableau de planets contenu dans le fichier planets.component.ts
     Dans l'exemple ci dessous une ligne de tableau sera affichée pour chaques planètes -->
-    <tr *ngFor="let planet of this.planets">
+    <tr id="listPlanets" *ngFor="let planet of this.planets">
       <td><img src="{{planet.image}}"></td>
       <!-- Utilisation d'une Pipe native Angular pour mettre en majuscule le texte -->
       <td>{{ planet.nom | uppercase }}</td>

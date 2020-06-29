@@ -6,7 +6,7 @@ export class Planet {
   nbKmTerre: number;
   image: string;
 
-  constructor($id: number = null, $nom: string = null, $nbHabitant: number = null, $allegiance: string = null, $nbKmTerre: number = null, $image: string = null) {
+  constructor($id: number = null, $nom: string = null, $nbHabitant: number = null, $allegiance: string = null, $nbKmTerre: number = null, $image: string = '/assets/images/aldebaran.jpg') {
     this.id = $id;
     this.nom = $nom;
     this.nbHabitant = $nbHabitant;

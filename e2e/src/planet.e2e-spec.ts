@@ -24,11 +24,40 @@ describe('Test des planetes', () => {
   });
 
 
-  it('Recherche le lien d\'ajout de planète et clique dessus', () => {
-    element.all(by.css('li')).then(totalRows => {
+  it('L\'utilisateur peut voir la liste des planètes et il peut accéder à la page ajouter une planete"', () => {
+    element.all(by.id('listPlanets')).then(totalRows => {
       this.nbPlanete = totalRows.length;
-      element(by.css('#addPlanetLink')).click();
+      element(by.id('addPlanetLink')).click();
+      page.sleep();
       expect(browser.driver.getCurrentUrl()).toContain('planets/add');
     });
   })
+
+
+  it('L\'utilisateur peut ajouter une planète"', () => {
+    element.all(by.id('listPlanets')).then(totalRows => {
+      this.nbPlanete = totalRows.length;
+      page.sleep();
+
+    });
+
+    browser.get('/planets/add');
+    page.sleep();
+    page.completeForm();
+    page.sleep();
+
+    element(by.id('submitterPlanet')).click();
+
+    page.sleep();
+
+    element.all(by.id('listPlanets')).then(totalRows => {
+      page.sleep();
+      expect(this.nbPlanete + 1).toEqual(totalRows.length);
+    });
+
+
+  })
+
+
+
 })

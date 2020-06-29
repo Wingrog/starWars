@@ -12,16 +12,12 @@ export class PlanetPage {
     let nbHabitant = element.all(by.id('nbHabitant'));
     let nbKmTerre = element.all(by.id('nbKmTerre'));
     let allegiance = element.all(by.id('allegiance'));
-    let image = element.all(by.id('image'));
 
     nom.sendKeys('poiuytreza');
     nbHabitant.sendKeys(100);
     nbKmTerre.sendKeys(300);
-    allegiance.sendKeys('Auvergne');
-
-    image.sendKeys('test');
+    allegiance.sendKeys('Loire');
   }
-
 
 
 }
