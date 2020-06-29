@@ -1,6 +1,5 @@
 {
-  "planet": [
-    {
+  "planet": [{
       "id": 1,
       "nom": "Tatooine",
       "nbHabitant": 10,
@@ -26,15 +25,14 @@
     },
     {
       "nom": "Mercure",
-      "nbHabitant": 200000,
+      "nbHabitant": 200,
       "allegiance": "Mercurien",
-      "nbKmTerre": 120000,
+      "nbKmTerre": 12000,
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Mercury_in_color_-_Prockter07_centered.jpg/280px-Mercury_in_color_-_Prockter07_centered.jpg",
       "id": 4
     }
   ],
-  "vaisseau": [
-    {
+  "vaisseau": [{
       "id": 1,
       "nom": "x-Wing",
       "model": "Audi",
