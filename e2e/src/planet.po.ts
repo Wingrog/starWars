@@ -9,17 +9,17 @@ export class PlanetPage {
 
   completeForm() {
     let nom = element.all(by.id('nom'));
-    let nombreHabitant = element.all(by.id('nombreHabitant'));
-    let distanceTerre = element.all(by.id('distanceTerre'));
+    let nbHabitant = element.all(by.id('nbHabitant'));
+    let nbKmTerre = element.all(by.id('nbKmTerre'));
     let allegiance = element.all(by.id('allegiance'));
-    let photo = element.all(by.id('photo'));
+    let image = element.all(by.id('image'));
 
     nom.sendKeys('poiuytreza');
-    nombreHabitant.sendKeys(100);
-    distanceTerre.sendKeys(300);
+    nbHabitant.sendKeys(100);
+    nbKmTerre.sendKeys(300);
     allegiance.sendKeys('Auvergne');
 
-    photo.sendKeys('test');
+    image.sendKeys('test');
   }
 
 
