@@ -28,7 +28,7 @@ Il prendra en valeur le lien qui changera le composant adéquat dans le fichier 
       Ce lien contiendra l'id de la planète de l'itération courante. -->
       <td><a class="btn btn-warning" [routerLink]="['/planets', planet.id]">En savoir plus</a></td>
       <!-- Même chose qu'au dessus -->
-      <td><a class="btn btn-primary" [routerLink]="['/planets/update', planet.id]">Editer</a></td>
+      <td><a class="btn btn-primary editionTest" [routerLink]="['/planets/update', planet.id]">Editer</a></td>
       <!-- On utilise ici un évènement onClick. Il appelera la fonction deletePlanet du fichier planets.component.ts
       Cette fonction prendra en paramètre l'objet planet de notre itération courante -->
       <!-- Bien penser à mettre le .id derriere pour que la supression fonctionne -->

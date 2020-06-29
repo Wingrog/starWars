@@ -20,4 +20,17 @@ export class PlanetPage {
   }
 
 
+  editForm() {
+    let nom = element.all(by.id('nom'));
+    let nbHabitant = element.all(by.id('nbHabitant'));
+    let nbKmTerre = element.all(by.id('nbKmTerre'));
+    let allegiance = element.all(by.id('allegiance'));
+
+    nom.sendKeys('poiuytreza 2');
+    nbHabitant.sendKeys(1001);
+    nbKmTerre.sendKeys(3001);
+    allegiance.sendKeys('Loire 2');
+  }
+
+
 }

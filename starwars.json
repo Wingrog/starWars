@@ -31,22 +31,6 @@
       "nbKmTerre": 120000,
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Mercury_in_color_-_Prockter07_centered.jpg/280px-Mercury_in_color_-_Prockter07_centered.jpg",
       "id": 4
-    },
-    {
-      "id": 5,
-      "nom": "poiuytreza",
-      "nbHabitant": 100,
-      "allegiance": "Loire",
-      "nbKmTerre": 300,
-      "image": "/assets/images/aldebaran.jpg"
-    },
-    {
-      "id": 6,
-      "nom": "poiuytreza",
-      "nbHabitant": 100,
-      "allegiance": "Loire",
-      "nbKmTerre": 300,
-      "image": "/assets/images/aldebaran.jpg"
     }
   ],
   "vaisseau": [
